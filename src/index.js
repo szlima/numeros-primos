@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './estilo.css';
 
-ReactDOM.render(<h1>Hello World!</h1>, document.querySelector('#root'));
+import Principal from './Principal';
+
+ReactDOM.render(<Principal/>, document.querySelector('#root'));
