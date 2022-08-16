@@ -1,12 +1,20 @@
 import React from 'react';
 
+import Entrada from './Entrada';
+
 class Principal extends React.Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        return <h1>Hello World!</h1>;
+        return (
+            <main>
+                <h1>Números primos</h1>
+
+                <Entrada />
+            </main>
+        );
     }
 }
 
