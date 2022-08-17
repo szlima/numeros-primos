@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Entrada extends React.Component{
 
     render(){
         return (
             <form className='d-flex'>
-                <input type='number' required className='form-control'
-                     placeholder='Mínimo' name='minimo'/>
-                <input type='number' required className='form-control'
-                     placeholder='Máximo' name='maximo'/>
+                <input type='number' required className='form-control' onChange={this.props.funcaoCampo}
+                     placeholder='Mínimo' name='minimo' value={this.props.campoMinimo}/>
+                <input type='number' required className='form-control' onChange={this.props.funcaoCampo}
+                     placeholder='Máximo' name='maximo' value={this.props.campoMaximo}/>
                 <input type='submit' className='btn btn-secondary'
                     value='Gerar'/>
             </form>
@@ -16,5 +17,8 @@ class Entrada extends React.Component{
     }
 }
 
+Entrada.propTypes= {
+    funcaoCampo: PropTypes.func.isRequired
+};
 
 export default Entrada;
