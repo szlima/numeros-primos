@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Entrada from './Entrada';
+import Saida from './Saida';
 
 class Principal extends React.Component{
     constructor(props){
@@ -8,7 +9,8 @@ class Principal extends React.Component{
 
         this.state= {
             minimo: '',
-            maximo: ''
+            maximo: '',
+            resultado: []
         };
     }
 
@@ -35,7 +37,11 @@ class Principal extends React.Component{
             } 
         }        
         
-        console.log(primosCopia);//
+        this.setState({
+            resultado: primosCopia,
+            minimo: '',
+            maximo: ''
+        });
     };
 
     render(){
@@ -45,6 +51,7 @@ class Principal extends React.Component{
 
                 <Entrada campoMinimo={this.state.minimo} campoMaximo={this.state.maximo}
                     funcaoCampo={this.digitar} funcaoBotao={this.enviar}/>
+                <Saida dados={this.state.resultado}/>
             </main>
         );
     }
