@@ -10,7 +10,11 @@ class Principal extends React.Component{
         this.state= {
             minimo: '',
             maximo: '',
-            resultado: []
+            resultado: {
+                minimo: '',
+                maximo: '',
+                primos: []
+            }
         };
     }
 
@@ -37,11 +41,15 @@ class Principal extends React.Component{
             } 
         }        
         
-        this.setState({
-            resultado: primosCopia,
+        this.setState(state => ({
+            resultado: {
+                minimo: state.minimo,
+                maximo: state.maximo,
+                primos: primosCopia
+            },
             minimo: '',
             maximo: ''
-        });
+        }));
     };
 
     render(){
