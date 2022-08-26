@@ -8,7 +8,7 @@ class Saida extends React.Component{
         return (this.props.dados.primos.length === 0 ?
             ((this.props.dados.minimo === '' && this.props.dados.maximo === '') ?
                 <p></p> : 
-                <p>Não há números primos no intervalo informado.</p> 
+                <p>Não há números primos entre {this.props.dados.minimo} e {this.props.dados.maximo}.</p> 
             ) :
             <table className='table table-bordered'>
                 <thead>
